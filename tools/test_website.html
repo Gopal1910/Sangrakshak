@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Website - Protected by Sangrakshak AI</title>
+    
+    <!-- 👇 CORRECT SCRIPT - Tumhara website ID -->
+    <script src="https://sangrakshak-worker.sangrakshak-ai.workers.dev/protect.js"
+            data-site-id="sang_ohs1e5aa7sb_1771348082619">
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { margin-top: 0; }
+        .status {
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Test Website - Protected by Sangrakshak AI</h1>
+        
+        <div class="status">
+            <h3>Protection Status:</h3>
+            <p>✅ Active - Website ID: <code>sang_ohs1e5aa7sb_1771348082619</code></p>
+        </div>
+        
+        <h2>Simulate User Activity</h2>
+        <button onclick="simulateHuman()">👤 Simulate Human</button>
+        <button onclick="simulateBot()">🤖 Simulate Bot</button>
+        
+        <div id="log" style="margin-top: 20px; max-height: 200px; overflow-y: auto;">
+            <p>Activity log will appear here...</p>
+        </div>
+    </div>
+    
+    <script>
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const p = document.createElement('p');
+            p.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logDiv.appendChild(p);
+        }
+        
+        function simulateHuman() {
+            log('👤 Simulating human behavior...');
+            
+            // Generate mouse movements
+            for(let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    document.dispatchEvent(new MouseEvent('mousemove', {
+                        clientX: 100 + i * 20,
+                        clientY: 200 + i * 10
+                    }));
+                }, i * 100);
+            }
+            
+            // Generate typing
+            setTimeout(() => {
+                document.dispatchEvent(new KeyboardEvent('keydown', { key: 'a' }));
+                document.dispatchEvent(new KeyboardEvent('keydown', { key: 'b' }));
+                document.dispatchEvent(new KeyboardEvent('keydown', { key: 'c' }));
+            }, 1000);
+            
+            // Generate scroll
+            setTimeout(() => {
+                window.dispatchEvent(new Event('scroll'));
+            }, 1500);
+        }
+        
+        function simulateBot() {
+            log('🤖 Simulating bot behavior...');
+            
+            // No mouse movements - direct API calls
+            fetch('https://sangrakshak-worker.sangrakshak-ai.workers.dev/analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    websiteId: 'sang_ohs1e5aa7sb_1771348082619',
+                    behavior: {
+                        mouseMovements: 0,
+                        typingSpeed: 500,
+                        scrollDepth: 0,
+                        timeOnPage: 0.1,
+                        clicks: 0
+                    }
+                })
+            }).then(res => res.json()).then(data => {
+                log(`🎯 Bot detection result: Block=${data.block}, Confidence=${data.confidence}%`);
+            });
+        }
+        
+        // Log when script loads
+        log('✅ Sangrakshak AI script loaded');
+    </script>
+</body>
+</html>
