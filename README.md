@@ -233,7 +233,7 @@ Our vision is to create a **global AI-powered web security layer** that protects
 
 # 👨‍💻 Author
 
-Developed by the Sangrakshak AI Team.
+Developed by the Team AstraGenX.
 
 ---
 
