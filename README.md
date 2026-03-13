@@ -177,12 +177,13 @@ Sangrakshak AI can be used for:
 
 Frontend
 
-* React / Next.js
+* React
+* TypeScript
 * Tailwind CSS
 
 Backend
 
-* Node.js / Python
+* Firebase / Python
 
 Machine Learning
 
